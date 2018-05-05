@@ -1,0 +1,105 @@
+#include <iostream>
+using namespace std;
+int Printt(int a, int b);
+const int n = 10;
+class Prav_Drob {
+public:
+	int chisl;
+	int znam;
+public:Prav_Drob(int xchisl, int xznam)
+{
+		   chisl = xchisl;
+		   znam = xznam;
+}
+};
+class Date {
+public:
+	int day = 21; 
+	int month = 3;
+	int year = 2018;
+public:Date(int xday, int xmonth, int xyear)
+{
+		   day = xday; 
+		   month = xmonth;
+		   year = xyear;
+		   
+}
+};
+class Stack
+{
+private:
+	int S[n];
+	int top;
+	bool is_full();
+public:
+	Stack();
+	void Push(int x);
+	void Pop();
+	void Print();
+};
+void main()
+{
+	Stack S;
+	S.Push(7); S.Push(3); S.Push(2); S.Push(6);
+	S.Print();
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	Prav_Drob *e;
+	e = new Prav_Drob(3, 4);
+	cout << e->chisl << endl << "-" << endl << e->znam << endl;
+	delete e;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	Date A[2] = { Date(22, 3, 2018), Date(23, 3, 2018) };
+	for (int i = 0; i < 2; i++){
+		cout << A[i].day << "/";
+		cout << A[i].month << "/";
+		cout << A[i].year;
+		cout << endl;
+	}
+	cin.get();
+	cin.get();
+}
+Stack::Stack() { top = -1; }
+bool Stack::is_full()
+{
+	if (top == n - 1)
+		return true;
+	else
+		return false;
+}
+void Stack::Push(int x)
+{
+	if (is_full())
+		cout << "Stack overflow";
+	else
+	{
+		top++;
+		S[top] = x;
+	}
+}
+void Stack::Pop()
+{
+	if (top == -1)
+		cout << "Stack underflow";
+	else
+		top--;
+}
+void Stack::Print()
+{
+	if (top == -1)
+		cout << "\nStack underflow";
+	else
+		cout << S[top];
+}
+
+
+
+//int Printt(int a, int b, int c)
+//{
+//	cout << a << endl << b << endl << c << endl;
+//	return 0;
+//}
+

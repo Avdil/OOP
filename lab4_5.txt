@@ -1,0 +1,59 @@
+,52734375using System;
+
+namespace Lab4_5
+{
+	class B{
+		public int []mas;
+		public int[] mas_2;
+		public B(int length, int init){
+			mas = new int[length];
+			for (int i = 0; i < length; i++) {
+				mas [i] = init * i;
+			}
+		}
+
+		public B () : this (5, 2){
+			Print ();
+		}
+
+		public void Print(){
+			foreach (int num in mas)
+				Console.WriteLine (num);
+		}
+			
+		public int this[int Arr]{
+			get{  return mas [Arr];}
+			set{  mas [Arr] = value;}
+		}  
+		public int this[short Arr_2]{
+			get{  return mas_2 [Arr_2];}
+			set{  mas_2[Arr_2]=value;}
+		}
+	}
+
+/*	public class Array{
+		private int [] Arrays = new int[20];
+		public int this[int Arr]{
+			get{ return Arrays [Arr];}
+			set{ Arrays [Arr] = value;}
+		}  
+	} */
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			B m = new B();
+			for (int i = 0; i < 5; i++) {
+				m [i] = 10 * i;                                        //вывод элементов массива через индексатор
+				Console.WriteLine ("Element in the array - " + m [i]); 
+			}
+			for (int i = 0; i < 5; i++) {
+				m [(short)i] = 100 * (short)i;                                        //вывод элементов массива через индексатор
+				Console.WriteLine ("Element in the array - " + m [(short)i]); 
+			}
+
+
+			Console.ReadKey ();
+		}
+	}
+}
